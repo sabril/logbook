@@ -7,6 +7,12 @@ class Ability
   end
   
   def admin
-    can :manage, :all
+    manager
+    can :manage, [AdminUser]
+  end
+  
+  def manager
+    can :manage, [Project]
+    can :update_password, AdminUser
   end
 end

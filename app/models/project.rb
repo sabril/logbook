@@ -16,10 +16,19 @@ class Project < ActiveRecord::Base
     case self.status
       when STATUS_EXPIRED then :bs_red
       when STATUS_PENDING then :bs_orange
-      when STATUS_CLOSED then :bs_blue
       when STATUS_ACTIVE then :bs_green
-      #when STATUS_CLOSED then :ok
-      #when STATUS_INVALID then :bs_red
+      when STATUS_CLOSED then :ok
+    end
+  end
+  
+  class << self
+    def status_collection
+      {
+        "Active" => STATUS_ACTIVE,
+        "Pending" => STATUS_PENDING,
+        "Closed" => STATUS_CLOSED,
+        "Expired" => STATUS_EXPIRED
+      }
     end
   end
 end
