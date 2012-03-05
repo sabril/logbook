@@ -23,17 +23,19 @@ ActiveAdmin.register Project do
     default_actions
   end
   
-  form :name => "Project Info" do |f|
-    f.inputs do
-      f.input :name
-      f.input :description
-      f.input :start, :as => :string, :input_html => { :class => "datepicker"}
-      f.input :finish, :as => :string, :input_html => { :class => "datepicker"}
-      f.input :leader, :collection => AdminUser.all.collect{|a| [a.email, a.id]}, :include_blank => false
-      f.input :status, :as => :select, :collection => Project.status_collection, :include_blank => false
-    end
-    f.buttons
-  end
+  form :partial => "form"
+  
+  # form :name => "Project Info" do |f|
+  #   f.inputs do
+  #     f.input :name
+  #     f.text_area :description, :class => "ckeditor"
+  #     f.input :start, :as => :string, :input_html => { :class => "datepicker"}
+  #     f.input :finish, :as => :string, :input_html => { :class => "datepicker"}
+  #     f.input :leader, :collection => AdminUser.all.collect{|a| [a.email, a.id]}, :include_blank => false
+  #     f.input :status, :as => :select, :collection => Project.status_collection, :include_blank => false
+  #   end
+  #   f.buttons
+  # end
   
   controller do
     after_filter :add_updated_by, :only => [:create, :update]
