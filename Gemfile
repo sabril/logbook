@@ -5,7 +5,7 @@ gem 'rails', '3.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+#gem 'sqlite3'
 gem 'pg'
 gem "cancan"
 
@@ -30,6 +30,7 @@ gem "ckeditor", "3.7.0.rc2"
 gem "carrierwave"
 gem "mini_magick"
 gem "memcache-client"
+gem "heroku"
 
 
 # To use ActiveModel has_secure_password
