@@ -51,13 +51,17 @@ gem "thin"
 
 group :test do
   # Pretty printed test output
+  gem 'guard-minitest'
   gem 'turn', :require => false
+  gem 'simplecov', :require => false
   gem "minitest"
+  gem 'simple_mock'
   gem "jasmine"
   gem "rspec-rails", "~> 2.6"
   gem "webrat"
   gem "capybara"
   gem "turn"
-  gem "guard-rspec"
+  gem "database_cleaner"
   gem 'shoulda-matchers'
+  gem "ruby-prof"
 end

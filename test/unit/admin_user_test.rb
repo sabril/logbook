@@ -1,7 +1,7 @@
 require 'test_helper'
 
-class AdminUserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+describe AdminUser do
+  it "should show user role" do
+    skip "Do this later"
+  end
 end
