@@ -27,7 +27,7 @@ ActiveAdmin.register AdminUser do
 end
 
 ActiveAdmin.register_page "UpdateMyPassword" do
-  menu :parent => "System Settings", :priority => 2
+  menu :parent => "System Settings", :priority => 2, :label => "Update My Password"
   content do
     render  :partial => "admin/admin_users/new_password"
   end  
