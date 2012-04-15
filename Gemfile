@@ -32,7 +32,6 @@ gem "mini_magick"
 gem "memcache-client"
 gem "heroku"
 gem "thin"
-gem "taps"
 
 
 # To use ActiveModel has_secure_password
