@@ -8,7 +8,7 @@ class Ability
   
   def admin
     manager
-    can :manage, [AdminUser]
+    can :manage, [AdminUser, Standard]
   end
   
   def manager

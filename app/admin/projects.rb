@@ -5,7 +5,7 @@ ActiveAdmin.register Project do
   filter :start
   filter :finish
   filter :status, :as => :select, :collection => Project.status_collection
-  
+  batch_action :destroy, false
   #scope :new
   scope :active
   scope :pending

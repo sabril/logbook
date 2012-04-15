@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120305201059) do
+ActiveRecord::Schema.define(:version => 20120415133052) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -64,6 +64,13 @@ ActiveRecord::Schema.define(:version => 20120305201059) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
+  create_table "clauses", :force => true do |t|
+    t.integer  "standard_id"
+    t.string   "number"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "projects", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -74,6 +81,31 @@ ActiveRecord::Schema.define(:version => 20120305201059) do
     t.integer  "leader_id"
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
+  end
+
+  create_table "standards", :force => true do |t|
+    t.string   "name"
+    t.date     "started_at"
+    t.date     "ended_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "sub_clauses", :force => true do |t|
+    t.integer  "clause_id"
+    t.string   "number"
+    t.string   "target"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "value_options", :force => true do |t|
+    t.integer  "sub_clause_id"
+    t.string   "description"
+    t.integer  "point",         :default => 0
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
 end

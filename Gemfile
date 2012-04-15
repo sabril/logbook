@@ -64,4 +64,5 @@ group :test do
   gem "database_cleaner"
   gem 'shoulda-matchers'
   gem "ruby-prof"
+  gem 'factory_girl'
 end
