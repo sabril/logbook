@@ -4,7 +4,12 @@ ActiveAdmin.register Audit do
   batch_action :destroy, false
   
   show :title => :title do
-    render "show"
+    div do
+      render "show"
+    end
+    div :class => "container-fluid" do
+      active_admin_comments
+    end
   end
   
   form do |f|

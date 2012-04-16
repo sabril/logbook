@@ -5,6 +5,11 @@ ActiveAdmin.register Standard do
   batch_action :destroy, false
   
   show :title => :name do
-    render "show"
+    div do
+      render "show"
+    end
+    div :class => "container-fluid" do
+      active_admin_comments
+    end
   end
 end
