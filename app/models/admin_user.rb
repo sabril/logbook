@@ -5,7 +5,7 @@ class AdminUser < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :roles
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :roles, :first_name, :last_name, :nip
   
   has_many :projects
   has_many :projects_i_lead, :foreign_key => :leader_id
@@ -13,7 +13,7 @@ class AdminUser < ActiveRecord::Base
   scope :with_role, lambda { |role| {:conditions => "roles_mask & #{2**ROLES.index(role.to_s)} > 0"} }
   
   def name
-    email
+    first_name.nil? ? email : first_name + ' ' + last_name
   end
   
   def roles=(roles)
