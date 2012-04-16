@@ -1,0 +1,7 @@
+.container-fluid
+  .content.well
+    .row
+      .span12
+        %h3 Klausul
+        - standard.clauses.each do |clause|
+          = render :partial => "admin/standards/clause", locals: {clause: clause}

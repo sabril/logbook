@@ -12,6 +12,10 @@ class AdminUser < ActiveRecord::Base
   has_many :audits_i_lead, :foreign_key => :leader_id
   scope :with_role, lambda { |role| {:conditions => "roles_mask & #{2**ROLES.index(role.to_s)} > 0"} }
   
+  def name
+    email
+  end
+  
   def roles=(roles)
     self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.sum
   end

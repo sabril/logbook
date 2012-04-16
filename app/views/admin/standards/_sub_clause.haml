@@ -6,12 +6,12 @@
     - if space > 0
       - for i in 0..4
         - if sub_clause.value_options[i]
-          = render partial: "value_option", locals: {:value_option => sub_clause.value_options[i]}
+          = render partial: "admin/standards/value_option", locals: {:value_option => sub_clause.value_options[i]}
         - else
           .span1 &nbsp;
     - else
       - sub_clause.value_options.each do |value_option|
-        = render partial: "value_option", locals: {:value_option => value_option}
+        = render partial: "admin/standards/value_option", locals: {:value_option => value_option}
   - else
     - for i in 1..5
       .span1 &nbsp;

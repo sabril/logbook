@@ -55,7 +55,6 @@ ActiveRecord::Schema.define(:version => 20120415151109) do
     t.date     "started_at"
     t.date     "ended_at"
     t.string   "name"
-    t.integer  "points"
     t.integer  "leader_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
@@ -63,6 +62,7 @@ ActiveRecord::Schema.define(:version => 20120415151109) do
 
   create_table "audits_values", :force => true do |t|
     t.integer  "audit_id"
+    t.integer  "sub_clause_id"
     t.integer  "value_option_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false

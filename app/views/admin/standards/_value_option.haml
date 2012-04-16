@@ -1,1 +1,4 @@
-.span1= "(#{value_option.point}) #{value_option.description}"
+- if @audit
+  .span1= @audit.value_options.include?(value_option) ? value_option.text : raw("&nbsp;")
+- else
+  .span1= value_option.text

@@ -5,7 +5,6 @@ class CreateAudits < ActiveRecord::Migration
       t.date :started_at
       t.date :ended_at
       t.string :name
-      t.integer :points
       t.integer :leader_id
 
       t.timestamps

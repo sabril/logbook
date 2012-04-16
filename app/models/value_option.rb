@@ -5,5 +5,12 @@ class ValueOption < ActiveRecord::Base
   validates_uniqueness_of :point, :scope => [:sub_clause_id]
   
   belongs_to :sub_clause
-  has_many :audits_values
+  has_many :audits_values, :dependent => :destroy
+  
+  scope :ordered, order("point ASC")
+  scope :max_points, order("point DESC")
+  
+  def text
+    "(#{point}) #{description}"
+  end
 end
