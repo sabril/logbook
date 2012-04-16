@@ -1,5 +1,8 @@
 class Audit < ActiveRecord::Base
   attr_accessible :ended_at, :leader_id, :name, :points, :standard_id, :started_at
+  
+  validates_presence_of :leader_id
+  
   belongs_to :standard
   belongs_to :leader, :class_name => "AdminUser"
   has_many :audits_values, :dependent => :destroy
@@ -15,6 +18,10 @@ class Audit < ActiveRecord::Base
   
   def title
     "#{name} (#{points}/#{standard.max_points})"
+  end
+  
+  def self.recent(request_count)
+    Audit.order('created_at desc').limit(request_count).all
   end
   
   protected

@@ -14,4 +14,8 @@ class SubClause < ActiveRecord::Base
   def max_point
     self.value_options.max_points.first.point
   end
+  
+  def get_value_option(point)
+    self.value_options.where(point: point)[0]
+  end
 end

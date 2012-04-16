@@ -5,8 +5,8 @@
     - space = 5 - sub_clause.value_options.count
     - if space > 0
       - for i in 0..4
-        - if sub_clause.value_options[i]
-          = render partial: "admin/standards/value_option", locals: {:value_option => sub_clause.value_options[i]}
+        - if sub_clause.get_value_option(i)
+          = render partial: "admin/standards/value_option", locals: {:value_option => sub_clause.get_value_option(i)}
         - else
           .span1 &nbsp;
     - else

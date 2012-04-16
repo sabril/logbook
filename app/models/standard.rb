@@ -6,6 +6,9 @@ class Standard < ActiveRecord::Base
   
   accepts_nested_attributes_for :clauses, :allow_destroy => true
   
+  def self.recent(request_count)
+    Standard.order('created_at desc').limit(request_count).all
+  end
   
   def max_points
     self.sub_clauses.map {|sc| sc.max_point }.inject {|sum, max| sum + max}

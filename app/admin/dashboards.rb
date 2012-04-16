@@ -7,13 +7,20 @@ ActiveAdmin::Dashboards.build do
   # == Simple Dashboard Section
   # Here is an example of a simple dashboard section
   #
-  #   section "Recent Posts" do
-  #     ul do
-  #       Post.recent(5).collect do |post|
-  #         li link_to(post.title, admin_post_path(post))
-  #       end
-  #     end
-  #   end
+  section "Recent Audits", :priority => 1 do
+    table_for Audit.recent(5).collect do |audit|
+      audit.column("Name") {|a| link_to(a.name, admin_audit_path(a))}
+      audit.column("Leader") {|a| a.leader.email}
+      audit.column("Status") {|a| a.points}
+      audit.column("Standard") {|a| link_to(a.standard.name, admin_standard_path(a.standard))}
+    end
+  end
+  
+  section "Recent Standard", :priority => 2 do
+    table_for Standard.recent(5).collect do |standard|
+      standard.column("Name") {|s| link_to(s.name, admin_standard_path(s))}
+    end
+  end
   
   # == Render Partial Section
   # The block is rendered within the context of the view, so you can
