@@ -1,7 +1,23 @@
 // Active Admin CSS Styles
 @import "active_admin/mixins";
 @import "active_admin/base";
-
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/modals";
+@import "bootstrap/close";
+@import "bootstrap/layouts";
+@import "bootstrap/forms";
+@import "bootstrap/grid";
+@import "bootstrap/alerts";
+@import "bootstrap/buttons";
+@import "bootstrap/button-groups";
+@import "bootstrap/dropdowns";
+@import "bootstrap-responsive";
+@import "bootstrap/progress-bars";
+@import "bootstrap/thumbnails";
+@import "bootstrap/tooltip";
+@import "bootstrap/tables";
+@import "bootstrap/wells";
 // To customize the Active Admin interfaces, add your
 // styles here:
 
@@ -488,3 +504,10 @@ table.dashboard td {
   background-color: #46a546;
 }
 
+a {
+  text-decoration: none !important;
+}
+
+thead th {
+  background: none;
+}

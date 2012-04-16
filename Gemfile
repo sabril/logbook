@@ -19,6 +19,8 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'bootstrap-sass'
+  # gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 end
 
 gem 'best_in_place'
@@ -32,7 +34,10 @@ gem "mini_magick"
 gem "memcache-client"
 gem "heroku"
 gem "thin"
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem "carrierwave"
+gem "fog", "~> 1.3.1"
+gem 'haml-rails'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

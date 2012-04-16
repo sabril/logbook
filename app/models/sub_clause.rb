@@ -7,6 +7,6 @@ class SubClause < ActiveRecord::Base
   validates_uniqueness_of :number, :scope => [:clause_id]
   
   def name
-    number + '. ' + description
+    clause.number + ' ' + number + '. ' + description
   end
 end
