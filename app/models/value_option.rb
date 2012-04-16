@@ -11,6 +11,6 @@ class ValueOption < ActiveRecord::Base
   scope :max_points, order("point DESC")
   
   def text
-    "(#{point}) #{description}"
+    "#{description}"
   end
 end
