@@ -3,4 +3,8 @@ ActiveAdmin.register Standard do
   controller.authorize_resource
   filter :name
   batch_action :destroy, false
+  
+  show :title => :name do
+    render "show"
+  end
 end
