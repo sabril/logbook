@@ -1,6 +1,9 @@
-.row.clauses
+.row
   .span1
     = clause.number
   .span11
+    .row
+      .span10= clause.name
     - clause.sub_clauses.each do |sub_clause|
-      = render partial: "admin/standards/sub_clause", locals: {:sub_clause => sub_clause}
+      .row
+        = render partial: "admin/standards/sub_clause", locals: {:sub_clause => sub_clause}

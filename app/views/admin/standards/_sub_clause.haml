@@ -1,30 +1,29 @@
-.row
-  .span1
-    - if @audit
-      .btn-group
-        %a.btn
-          %i.icon-white= sub_clause.number
-        %a.btn.dropdown-toggle{ href: "#", "data-toggle" => "dropdown"}
-          %span.caret
-        %ul.dropdown-menu
-          %li= link_to "Assign Leader", "#"
-          %li= link_to "Update Value", "#"
-          %li= link_to "Upload Attachments", "#"
-    - else
-      = sub_clause.number
-  .span2= sub_clause.target
-  - if sub_clause.value_options.count > 0
-    - space = 5 - sub_clause.value_options.count
-    - if space > 0
-      - for i in 0..4
-        - if sub_clause.get_value_option(i)
-          = render partial: "admin/standards/value_option", locals: {:value_option => sub_clause.get_value_option(i)}
-        - else
-          .span1 &nbsp;
-    - else
-      - sub_clause.value_options.each do |value_option|
-        = render partial: "admin/standards/value_option", locals: {:value_option => value_option}
+.span1
+  - if @audit
+    .btn-group
+      %a.btn
+        %i.icon-white= sub_clause.number
+      %a.btn.dropdown-toggle{ href: "#", "data-toggle" => "dropdown"}
+        %span.caret
+      %ul.dropdown-menu
+        %li= link_to "Assign Leader", "#"
+        %li= link_to "Update Value", "#"
+        %li= link_to "Upload Attachments", "#"
   - else
-    - for i in 1..5
-      .span1 &nbsp;
-  .span2= sub_clause.description
+    = sub_clause.number
+.span2= sub_clause.target
+- if sub_clause.value_options.count > 0
+  - space = 5 - sub_clause.value_options.count
+  - if space > 0
+    - for i in 0..4
+      - if sub_clause.get_value_option(i)
+        = render partial: "admin/standards/value_option", locals: {:value_option => sub_clause.get_value_option(i)}
+      - else
+        .span1 &nbsp;
+  - else
+    - sub_clause.value_options.each do |value_option|
+      = render partial: "admin/standards/value_option", locals: {:value_option => value_option}
+- else
+  - for i in 1..5
+    .span1 &nbsp;
+.span2= sub_clause.description

@@ -3,6 +3,7 @@ class Standard < ActiveRecord::Base
   has_many :clauses, :dependent => :destroy
   has_many :sub_clauses, :through => :clauses
   has_many :value_options, :through => :sub_clauses
+  has_many :audits
   
   accepts_nested_attributes_for :clauses, :allow_destroy => true
   

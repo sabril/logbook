@@ -5,7 +5,7 @@ class CreateAssetVersions < ActiveRecord::Migration
       t.text :description
       t.integer :asset_id
       t.integer :uploader_id
-      t.integer :version_number
+      t.integer :position
       t.string :asset_version_file
       t.timestamps
     end

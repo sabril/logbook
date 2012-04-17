@@ -19,5 +19,5 @@
             %h3 4
           .span1
             %h3 Keterangan
-        - standard.clauses.each do |clause|
+        - standard.clauses.ordered.each do |clause|
           = render :partial => "admin/standards/clause", locals: {clause: clause}

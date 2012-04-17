@@ -1,0 +1,14 @@
+- time = 5 - @sub_clause.value_options.count
+- time.times{ @sub_clause.value_options.build }
+= semantic_form_for [:admin, @sub_clause] do |f|
+  = f.inputs name: "Sub Clause Detail" do
+    = f.input :clause
+    = f.input :number
+    = f.input :target
+  = f.semantic_fields_for :value_options do |v|
+    = v.inputs do
+      = v.input :point
+      = v.input :description
+  = f.inputs do
+    = f.input :description
+  = f.buttons

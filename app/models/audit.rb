@@ -11,6 +11,7 @@ class Audit < ActiveRecord::Base
   has_many :value_options, :through => :audits_values
   
   after_create :add_audits_values
+  #after_update :add_audits_values
   
   def points
     self.value_options.sum(:point)

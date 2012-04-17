@@ -4,12 +4,15 @@ ActiveAdmin.register Audit do
   batch_action :destroy, false
   
   index do
-    column :id
     column :name do |audit|
-        link_to audit.name, admin_audit_path(audit)
+      link_to audit.name, admin_audit_path(audit)
+    end
+    column :leader do |audit|
+      audit.leader.name
     end
     column :started_at
     column :ended_at
+    default_actions
   end
   
   show :title => :title do

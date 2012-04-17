@@ -38,7 +38,7 @@ gem "carrierwave"
 gem "fog", "~> 1.3.1"
 gem 'haml-rails'
 gem "heroku"
-
+gem "acts_as_list", "~> 0.1.5"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -18,6 +18,5 @@ class AuditsValue < ActiveRecord::Base
     self.value_option_id = self.sub_clause.value_options.ordered.first[:id]
     self.save
   end
-  
-  
+   
 end
