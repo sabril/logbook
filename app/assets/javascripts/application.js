@@ -16,3 +16,5 @@
 //= require bootstrap-modal
 //= require bootstrap-dropdown
 //= require_tree .
+
+$('.dropdown-toggle').dropdown();
