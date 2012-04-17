@@ -3,6 +3,6 @@ class AssetVersion < ActiveRecord::Base
   belongs_to :asset
   #belongs_to :owner, :class => "AdminUser"
   # 
-  # mount_uploader :asset_version_file, AssetVersionUploader
+  mount_uploader :asset_version_file, AssetVersionUploader
   
 end
