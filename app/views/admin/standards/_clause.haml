@@ -3,7 +3,12 @@
     = clause.number
   .span11
     .row
-      .span10= clause.name
+      .span10
+        %b= clause.name
+    .row
+      .span10 &nbsp;
     - clause.sub_clauses.each do |sub_clause|
       .row
         = render partial: "admin/standards/sub_clause", locals: {:sub_clause => sub_clause}
+      .row
+        .span10 &nbsp;

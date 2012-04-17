@@ -11,7 +11,7 @@
         %li= link_to "Upload Attachments", "#"
   - else
     = sub_clause.number
-.span2= sub_clause.target
+.span2= @audit.nil? ? link_to(sub_clause.target, edit_admin_sub_clause_path(sub_clause)) : sub_clause.target
 - if sub_clause.value_options.count > 0
   - space = 5 - sub_clause.value_options.count
   - if space > 0
