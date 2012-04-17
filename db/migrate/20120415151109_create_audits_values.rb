@@ -4,7 +4,7 @@ class CreateAuditsValues < ActiveRecord::Migration
       t.integer :audit_id
       t.integer :sub_clause_id
       t.integer :value_option_id
-      
+      t.integer :user_id
       t.timestamps
     end
   end
