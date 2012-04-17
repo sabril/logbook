@@ -6,7 +6,7 @@ gem 'rails', '3.2.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 #gem 'mysql'
-gem 'pg'
+
 gem "cancan"
 
 # Gems used only for assets and not required
@@ -33,10 +33,11 @@ gem "carrierwave"
 gem "mini_magick"
 gem "memcache-client"
 gem "heroku"
-gem "thin"
+
 gem "carrierwave"
 gem "fog", "~> 1.3.1"
 gem 'haml-rails'
+gem "heroku"
 
 
 # To use ActiveModel has_secure_password
@@ -53,6 +54,11 @@ gem 'haml-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+group :production do
+  gem "thin"
+  gem 'pg'
+end
+
 
 group :test do
   # Pretty printed test output
