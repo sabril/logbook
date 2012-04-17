@@ -13,7 +13,7 @@ class AdminUser < ActiveRecord::Base
   has_many :audits_values, :foreign_key => :user_id
   has_many :assets, :foreign_key => :owner_id
   has_many :asset_updaters, :foreign_key => :updated_by_id
-  has_many :asset_versions, :foreign_key => :owner_id
+  #has_many :asset_versions, :foreign_key => :owner_id
   
   scope :with_role, lambda { |role| {:conditions => "roles_mask & #{2**ROLES.index(role.to_s)} > 0"} }
   
