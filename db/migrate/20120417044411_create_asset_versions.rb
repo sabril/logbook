@@ -6,7 +6,7 @@ class CreateAssetVersions < ActiveRecord::Migration
       t.integer :asset_id
       t.integer :owner_id
       t.integer :version_number
-
+      t.string :attachment
       t.timestamps
     end
   end

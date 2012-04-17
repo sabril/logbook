@@ -18,6 +18,7 @@
 @import "bootstrap/tooltip";
 @import "bootstrap/tables";
 @import "bootstrap/wells";
+@import "bootstrap/sprites";
 // To customize the Active Admin interfaces, add your
 // styles here:
 
@@ -510,4 +511,11 @@ a {
 
 thead th {
   background: none;
+}
+
+i {
+  font-style: normal;
+}
+
+.clauses {
 }

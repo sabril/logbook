@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20120417044411) do
     t.integer  "asset_id"
     t.integer  "owner_id"
     t.integer  "version_number"
+    t.string   "attachment"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
