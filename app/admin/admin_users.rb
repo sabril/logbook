@@ -6,6 +6,9 @@ ActiveAdmin.register AdminUser do
     column :email do |user|
         link_to user.email, admin_admin_user_path(user)
     end
+    column :name do |user|
+        link_to user.name, admin_admin_user_path(user)
+    end
     column :roles do |user|
       user.roles.map {|r| r.capitalize }.join(', ')
     end
