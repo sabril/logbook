@@ -12,9 +12,4 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-scrollspy
-//= require bootstrap-modal
-//= require bootstrap-dropdown
 //= require_tree .
-
-$('.dropdown-toggle').dropdown();
