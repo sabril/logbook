@@ -23,6 +23,10 @@ class SubClause < ActiveRecord::Base
     self.value_options.where(point: point)[0]
   end
   
+  def current_audits_value(audit_id)
+    self.audits_values.where(:audit_id => audit_id)[0]
+  end
+  
   protected
   
   def assign_to_audits

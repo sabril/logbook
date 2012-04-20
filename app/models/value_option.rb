@@ -13,4 +13,8 @@ class ValueOption < ActiveRecord::Base
   def text
     "#{description}"
   end
+  
+  def name
+    text
+  end
 end

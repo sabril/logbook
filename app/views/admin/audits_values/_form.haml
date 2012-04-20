@@ -1,0 +1,6 @@
+- unless @audits_value.new_record?
+  = semantic_form_for [:admin, @audits_value] do |f|
+    = f.inputs name: "Sub Clause Detail" do
+      = f.input :value_option, :collection => @audits_value.sub_clause.value_options, :include_blank => false
+    = f.buttons
+    = link_to "Back to audit", admin_audit_path(@audits_value.audit)
