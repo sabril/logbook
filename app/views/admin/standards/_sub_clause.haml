@@ -5,10 +5,10 @@
         %i.icon-white= sub_clause.number
       %a.btn.dropdown-toggle{ href: "#", "data-toggle" => "dropdown"}
         %span.caret
-      /%ul.dropdown-menu
-      /  /%li= link_to "Assign Leader", "#"
-      /  /%li= link_to "Update Value", edit_admin_audits_value_path(@audit)
-      /  /%li= link_to "Upload Attachments", "#"
+      %ul.dropdown-menu
+        /  /%li= link_to "Assign Leader", "#"
+        %li= link_to "Update Value", edit_admin_audits_value_path(sub_clause.current_audits_value(@audit[:id]))
+        /  /%li= link_to "Upload Attachments", "#"
   - else
     = sub_clause.number
 .span2= @audit.nil? ? link_to(sub_clause.target, edit_admin_sub_clause_path(sub_clause)) : link_to(sub_clause.target, edit_admin_audits_value_path(sub_clause.current_audits_value(@audit[:id])))
