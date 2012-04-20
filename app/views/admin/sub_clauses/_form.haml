@@ -2,7 +2,7 @@
 - time.times{ @sub_clause.value_options.build }
 = semantic_form_for [:admin, @sub_clause] do |f|
   = f.inputs name: "Sub Clause Detail" do
-    = f.input :clause
+    = f.input :clause, :collection => Clause.all.map {|c| ["#{c.number} - #{c.name}", c.id]}
     = f.input :number
     = f.input :target
   = f.semantic_fields_for :value_options do |v|
