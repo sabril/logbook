@@ -4,7 +4,7 @@ class SubClause < ActiveRecord::Base
   has_many :value_options, :dependent => :destroy
   has_many :audits_values
   
-  accepts_nested_attributes_for :value_options, :reject_if => lambda { |a| a[:description].blank? }, :update_only => true, :allow_destroy => true
+  accepts_nested_attributes_for :value_options, :reject_if => lambda { |a| a[:description].blank? }, :allow_destroy => true
   
   validates_presence_of :number
   validates_uniqueness_of :number, :scope => [:clause_id]

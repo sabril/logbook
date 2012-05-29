@@ -1,6 +1,10 @@
 - unless @audits_value.new_record?
+  - 4.times{ @audits_value.assets.build }
   = semantic_form_for [:admin, @audits_value] do |f|
-    = f.inputs name: "Sub Clause Detail" do
+    = f.inputs name: "Posisi" do
       = f.input :value_option, :collection => @audits_value.sub_clause.value_options, :include_blank => false
+    /= f.semantic_fields_for :assets do |asset|
+    /  = asset.inputs name: "Asset" do 
+    /    = asset.input :name
     = f.buttons
     = link_to "Back to audit", admin_audit_path(@audits_value.audit)

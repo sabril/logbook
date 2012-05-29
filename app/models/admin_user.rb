@@ -14,6 +14,8 @@ class AdminUser < ActiveRecord::Base
   has_many :assets, :foreign_key => :owner_id
   has_many :asset_updaters, :foreign_key => :updated_by_id
   has_many :asset_versions, :foreign_key => :uploader_id
+  has_many :document_groups
+  has_many :documents
   
   scope :with_role, lambda { |role| {:conditions => "roles_mask & #{2**ROLES.index(role.to_s)} > 0"} }
   

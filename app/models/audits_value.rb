@@ -7,6 +7,8 @@ class AuditsValue < ActiveRecord::Base
   
   has_many :assets, :as => :assetable
   
+  accepts_nested_attributes_for :assets, :reject_if => lambda { |a| a[:name].blank? || a[:owner_id].blank? }, :allow_destroy => true
+  
   after_create :assign_value_option
   
   def leader

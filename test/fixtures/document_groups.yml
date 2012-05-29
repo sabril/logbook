@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  status: MyString
+  progress: 1.5
+  pic_id: 1
+
+two:
+  name: MyString
+  status: MyString
+  progress: 1.5
+  pic_id: 1
