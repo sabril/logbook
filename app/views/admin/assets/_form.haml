@@ -1,8 +1,10 @@
-- 4.times{ @asset.asset_versions.build }
-= semantic_form_for [:admin, @asset] do |f|
-  = f.inputs name: "Asset Detail" do
-    = f.input :owner, :include_blank => false
-  = f.semantic_fields_for :asset_versions do |a_v|
-    = a_v.inputs "Files" do
-      = a_v.input :asset_version_file, :as => :file
-  = f.buttons
+- 1.times{ @asset.asset_versions.build }
+= render "asset"
+/ - 4.times{ @asset.asset_versions.build }
+/ = semantic_form_for [:admin, @asset] do |f|
+/   = f.inputs name: "Asset Detail" do
+/     = f.input :owner, :include_blank => false
+/   = f.semantic_fields_for :asset_versions do |a_v|
+/     = a_v.inputs "Files" do
+/       = a_v.input :asset_version_file, :as => :file
+/   = f.buttons

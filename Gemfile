@@ -42,6 +42,7 @@ gem "acts_as_list", "~> 0.1.5"
 gem "knockout-rails"
 gem "rabl"
 gem "backbone-on-rails"
+gem "jquery-fileupload-rails", :git => "git://github.com/sabril/jquery-fileupload-rails.git"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

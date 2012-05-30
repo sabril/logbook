@@ -4,4 +4,5 @@ class Document < ActiveRecord::Base
   belongs_to :document_group
   belongs_to :pic, class_name: "AdminUser"
   
+  has_many :assets, :as => :assetable
 end

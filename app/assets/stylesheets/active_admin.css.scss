@@ -19,6 +19,7 @@
 @import "bootstrap/tables";
 @import "bootstrap/wells";
 @import "bootstrap/sprites";
+@import "jquery.fileupload-ui";
 // To customize the Active Admin interfaces, add your
 // styles here:
 
@@ -518,4 +519,17 @@ i {
 }
 
 .clauses {
+}
+
+.progress-animated .bar {
+  background: url(/assets/progressbar.gif) !important;
+  filter: none;
+}
+.fileupload-loading {
+  position: absolute;
+  left: 50%;
+  width: 128px;
+  height: 128px;
+  background: url(/assets/loading.gif) center no-repeat;
+  display: none;
 }
