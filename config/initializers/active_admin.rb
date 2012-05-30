@@ -129,6 +129,7 @@ ActiveAdmin.setup do |config|
 end
 
 ActiveAdmin::ResourceController.class_eval do
+  helper :all
   protected
 
   def current_ability

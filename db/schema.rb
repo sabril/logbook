@@ -115,18 +115,22 @@ ActiveRecord::Schema.define(:version => 20120529075604) do
   create_table "document_groups", :force => true do |t|
     t.string   "name"
     t.string   "status"
-    t.float    "progress"
+    t.float    "progress",   :default => 0.0
     t.integer  "pic_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   create_table "documents", :force => true do |t|
     t.integer  "document_group_id"
     t.string   "name"
+    t.string   "number"
+    t.string   "location"
     t.string   "status"
     t.float    "progress"
     t.integer  "pic_id"
+    t.date     "start_retention"
+    t.date     "end_retention"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end

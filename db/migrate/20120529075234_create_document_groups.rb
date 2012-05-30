@@ -3,7 +3,7 @@ class CreateDocumentGroups < ActiveRecord::Migration
     create_table :document_groups do |t|
       t.string :name
       t.string :status
-      t.float :progress
+      t.float :progress, :default => 0.00
       t.integer :pic_id
 
       t.timestamps

@@ -8,7 +8,7 @@ class Ability
   
   def admin
     manager
-    can :manage, [AdminUser, Standard, Clause, SubClause, ValueOption, Audit, AuditsValue, Asset]
+    can :manage, [AdminUser, Standard, Clause, SubClause, ValueOption, Audit, AuditsValue, Asset, DocumentGroup, Document]
   end
   
   def manager

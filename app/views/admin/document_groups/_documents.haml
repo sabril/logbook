@@ -1,0 +1,39 @@
+.panel
+  %h3 Document Details
+  .panel_contents
+    .attributes_table
+      %table
+        %tbody
+          %tr
+            %th Name
+            %td= @document_group.name
+          %tr
+            %th Status
+            %td= status_tag @document_group.status, @document_group.status_tag
+          %tr
+            %th PIC
+            %td= @document_group.pic.name
+          %tr
+            %th Progress
+            %td= @document_group.progress
+.panel
+  %h3 Documents
+  .panel_contents
+    .attributes_table
+      %table
+        %thead
+          %tr
+            %th Name
+            %th Number
+            %th PIC
+            %th Lokasi
+            %th Periode
+            %th Status
+            %th Progress
+        %thead
+          - @document_group.documents.each do |document|
+            %tr
+              %td= document.name
+              %td= document.number
+              %td= document.pic.name
+              
